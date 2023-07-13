@@ -7,14 +7,15 @@ import utilities.Driver;
 
 public class AmazonPage {
 
-    public AmazonPage() {
-        //baska package'daki class'larin bu constructor'i kullanabilmeleri icin access modifier'ini
-        //public yapmaliyiz
+    public AmazonPage(){
+        // baska package'daki class'larin bu constructor'i kullanabilmeleri icin
+        // access mofifier'ini public yapalim
 
-        //bu page class'indan locate kullanacak tum class'lar AmazonPage class'indan obje olusturmali
-        //Obje olusturmak icin de mutlaka bu constructor calisacak
-        //O zaman bu class'ta WebDriver'imizi tanimlama isini
-        //bu constructor icinde yapabiliriz.
+        // bu page class'indan locate kullanacak tum class'lar
+        // AmazonPage class'indan obje olusturmali
+        // obje olusturmak icin de mutlaka bu Constructor calisacak
+        // o zaman bu class'da WebDriver'imizi tanimlama isini
+        // bu constructor icinde yapabiliriz
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -27,4 +28,9 @@ public class AmazonPage {
     public WebElement sonucYaziElementi;
 
 
+    @FindBy(xpath = "(//div[@class='a-section aok-relative s-image-square-aspect'])[1]")
+    public WebElement ilkUrunElementi;
+
+    @FindBy(xpath = "//span[@id='productTitle']")
+    public WebElement ilkUrunIsimElementi;
 }
